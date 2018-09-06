@@ -1,7 +1,7 @@
 <!-- Source clone from https://github.com/codrops/GridLoadingAnimations -->
 
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="no-js">
 
 <head>
 	<meta charset="UTF-8" />
@@ -14,6 +14,7 @@
 	<meta name="google" content="notranslate" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/styles.css" />
+	<script>document.documentElement.className = 'js';</script>
 </head>
 
 <body class="loading">
@@ -24,10 +25,8 @@
 		</symbol>
 		<symbol id="icon-drop" viewBox="0 0 24 24">
 			<title>drop</title>
-			<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z"
-			/>
-			<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z"
-			/>
+			<path d="M12,21c-3.6,0-6.6-3-6.6-6.6C5.4,11,10.8,4,11.4,3.2C11.6,3.1,11.8,3,12,3s0.4,0.1,0.6,0.3c0.6,0.8,6.1,7.8,6.1,11.2C18.6,18.1,15.6,21,12,21zM12,4.8c-1.8,2.4-5.2,7.4-5.2,9.6c0,2.9,2.3,5.2,5.2,5.2s5.2-2.3,5.2-5.2C17.2,12.2,13.8,7.3,12,4.8z" />
+			<path d="M12,18.2c-0.4,0-0.7-0.3-0.7-0.7s0.3-0.7,0.7-0.7c1.3,0,2.4-1.1,2.4-2.4c0-0.4,0.3-0.7,0.7-0.7c0.4,0,0.7,0.3,0.7,0.7C15.8,16.5,14.1,18.2,12,18.2z" />
 		</symbol>
 	</svg>
 	<main>
@@ -52,7 +51,15 @@
 				</div>
 				<div class="control__item">
 					<input class="control__radio" type="radio" name="grid-type" value="grid--type-d" id="control-grid-d">
-					<label class="control__label" for="control-grid-c">Memories with friends</label>
+					<label class="control__label" for="control-grid-d">Memories with friends</label>
+				</div>
+				<div class="control__item">
+					<input class="control__radio" type="radio" name="grid-type" value="grid--type-e" id="control-grid-e">
+					<label class="control__label" for="control-grid-e">Videos</label>
+				</div>
+				<div class="control__item">
+					<input class="control__radio" type="radio" name="grid-type" value="grid--type-f" id="control-grid-f">
+					<label class="control__label" for="control-grid-f">Thanks</label>
 				</div>
 			</div>
 		</div>
@@ -75,6 +82,9 @@
 					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8041.jpg" alt="wedding" /></a>
 				</div>
 				<div class="grid__item">
+					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8069.jpg" alt="wedding" /></a>
+				</div>
+				<div class="grid__item">
 					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8087.jpg" alt="wedding" /></a>
 				</div>
 				<div class="grid__item">
@@ -87,13 +97,16 @@
 					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8112.jpg" alt="wedding" /></a>
 				</div>
 				<div class="grid__item">
+					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8119.jpg" alt="wedding" /></a>
+				</div>
+				<div class="grid__item">
+					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8136.jpg" alt="wedding" /></a>
+				</div>
+				<div class="grid__item">
 					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8152.jpg" alt="wedding" /></a>
 				</div>
 				<div class="grid__item">
 					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8169.jpg" alt="wedding" /></a>
-				</div>
-				<div class="grid__item">
-					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8197.jpg" alt="wedding" /></a>
 				</div>
 				<div class="grid__item">
 					<a class="grid__link" href="#"><img class="grid__img" src="/images/our/IMG_8250.jpg" alt="wedding" /></a>
@@ -132,14 +145,22 @@
 				<div class="grid__sizer"></div>
 				<div>d</div>
 			</div>
+			<div class="grid grid--type-e">
+				<div class="grid__sizer"></div>
+				<div>e</div>
+			</div>
+			<div class="grid grid--type-f">
+				<div class="grid__sizer"></div>
+				<div>f</div>
+			</div>
 		</div>
 	</main>
 	<script src="js/imagesloaded.pkgd.min.js"></script>
 	<script src="js/masonry.pkgd.min.js"></script>
 	<script src="js/anime.min.js"></script>
 	<script src="js/main.js"></script>
-	<iframe src="https://www.nhaccuatui.com/lh/background/neGy3ZTNwXoi" width="1" height="1" frameborder="0" allowfullscreen
-	 allow="autoplay"></iframe>
+	<iframe src="https://www.nhaccuatui.com/lh/background/neGy3ZTNwXoi" width="1" height="1" frameborder="0"
+	 allowfullscreen allow="autoplay"></iframe>
 </body>
 
 </html>

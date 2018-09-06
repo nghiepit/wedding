@@ -514,6 +514,11 @@
       gItem.style.overflow = '';
     });
   };
+  GridLoaderFx.prototype.randomEffects = function() {
+    var effects = Object.keys(this.effects);
+
+    return effects[Math.floor(Math.random() * effects.length)];
+  };
 
   window.GridLoaderFx = GridLoaderFx;
 
@@ -565,10 +570,8 @@
     switchGridCtrls.forEach(function(ctrl) {
       ctrl.addEventListener('click', switchGrid);
     });
-    // Effect selection.
-    fxCtrls.forEach(function(ctrl) {
-      ctrl.addEventListener('click', applyFx);
-    });
+
+    applyFx();
   }
 
   function switchGrid(ev) {
@@ -585,7 +588,7 @@
     masonry[currentGrid].layout();
   }
 
-  function applyFx(ev) {
+  function applyFx() {
     // Simulate loading grid to show the effect.
     clearTimeout(loadingTimeout);
     grids[currentGrid].classList.add('grid--loading');
@@ -594,7 +597,7 @@
       grids[currentGrid].classList.remove('grid--loading');
 
       // Apply effect.
-      loaders[currentGrid]._render(ev.target.getAttribute('data-fx'));
+      loaders[currentGrid]._render(GridLoaderFx.prototype.randomEffects());
     }, 500);
   }
 
