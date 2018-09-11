@@ -586,6 +586,7 @@
     // Show new grid.
     grid.classList.remove('grid--hidden');
     masonry[currentGrid].layout();
+    applyFx();
   }
 
   function applyFx() {
@@ -601,5 +602,87 @@
     }, 500);
   }
 
+  function getTimeRemaining(endtime) {
+    var t = Date.parse(endtime) - Date.parse(new Date());
+    var seconds = Math.floor((t / 1000) % 60);
+    var minutes = Math.floor((t / 1000 / 60) % 60);
+    var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+    var days = Math.floor(t / (1000 * 60 * 60 * 24));
+    return {
+      total: t,
+      days: days,
+      hours: hours,
+      minutes: minutes,
+      seconds: seconds,
+    };
+  }
+
+  function initializeClock(id, endtime) {
+    var clock = document.getElementById(id);
+    var daysSpan = clock.querySelector('.days');
+    var hoursSpan = clock.querySelector('.hours');
+    var minutesSpan = clock.querySelector('.minutes');
+    var secondsSpan = clock.querySelector('.seconds');
+
+    function updateClock() {
+      var t = getTimeRemaining(endtime);
+
+      daysSpan.innerHTML = t.days;
+      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+      if (t.total <= 0) {
+        clearInterval(timeinterval);
+      }
+    }
+
+    updateClock();
+    var timeinterval = setInterval(updateClock, 1000);
+  }
+
+  var deadline = new Date('September 29, 2018 10:30:00');
+  console.log(deadline);
+  initializeClock('clockdiv', deadline);
+
   init();
 })(window);
+
+function initMap() {
+  var uluru = {lat: 12.9841931, lng: 109.2318732};
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 18,
+    center: uluru,
+  });
+
+  var contentString = `
+    <div style="max-width:100vw;padding:5px;">
+      <img src="/images/our/IMG_8324.jpg" width="230">
+      <div style="float:right;margin-left:10px;">
+        <h1>Nghiep and Ngan wedding</h1>
+        <h2>Saturday, September 29, 2018 at 10h30 a.m</h2>
+        <h3>Location: Near market Hoa Dong</h3>
+        <h3>❤️❤️❤️❤️❤️❤️❤️</h3>
+      </div>
+    </div>
+  `;
+
+  var infowindow = new google.maps.InfoWindow({
+    content: contentString,
+  });
+
+  var marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+    title: 'Nghiep and Ngan wedding',
+    icon: {
+      url: '/images/wedding-couple.svg',
+      scaledSize: {width: 100, height: 130},
+    },
+  });
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
+
+  google.maps.event.trigger(marker, 'click');
+}
