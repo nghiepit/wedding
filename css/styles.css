@@ -437,3 +437,18 @@ main {
   max-height: 100vh;
   margin-top: 20px;
 }
+
+#btn-close-youtube {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+@media (pointer: coarse) {
+  #btn-close-youtube {
+    display: none;
+  }
+}

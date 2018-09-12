@@ -645,6 +645,16 @@
   console.log(deadline);
   initializeClock('clockdiv', deadline);
 
+  var btnMuteMusic = document.getElementById('btn-close-youtube');
+  btnMuteMusic.addEventListener(
+    'click',
+    function() {
+      document.getElementById('play-youtube').remove();
+      btnMuteMusic.remove();
+    },
+    false,
+  );
+
   init();
 })(window);
 
@@ -661,7 +671,7 @@ function initMap() {
       <div style="float:right;margin-left:10px;">
         <h1>Nghiep and Ngan wedding</h1>
         <h2>Saturday, September 29, 2018 at 10h30 a.m</h2>
-        <h3>Location: Near market Hoa Dong</h3>
+        <h3>Location: Near Hoa Dong market</h3>
         <h3>❤️❤️❤️❤️❤️❤️❤️</h3>
       </div>
     </div>
