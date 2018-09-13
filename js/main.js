@@ -663,16 +663,17 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     zoom: 18,
     center: uluru,
+    streetViewControl: false,
+    mapTypeControl: false,
   });
 
   var contentString = `
-    <div style="max-width:100vw;padding:5px;">
-      <img src="/images/our/IMG_8324.jpg" width="230">
-      <div style="float:right;margin-left:10px;">
+    <div class="wrapper-popup-marker">
+      <img src="/images/our/IMG_8324.jpg" width="230" class="image-marker">
+      <div>
         <h1>Nghiep and Ngan wedding</h1>
         <h2>Saturday, September 29, 2018 at 10h30 a.m</h2>
         <h3>Location: Near Hoa Dong market</h3>
-        <h3>❤️❤️❤️❤️❤️❤️❤️</h3>
       </div>
     </div>
   `;
