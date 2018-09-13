@@ -655,6 +655,24 @@
     false,
   );
 
+  var outGalleryLightbox = GLightbox({
+    selector: 'glightbox-our-gallery',
+  });
+
+  var videosLightbox = GLightbox({
+    selector: 'glightbox-video',
+    youtube: {
+      api: 'https://www.youtube.com/iframe_api',
+      params: {
+        enablejsapi: 1,
+        showinfo: 0,
+        controls: 0,
+        rel: 0,
+        autoplay: 0,
+      },
+    },
+  });
+
   init();
 })(window);
 
