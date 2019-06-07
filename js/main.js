@@ -642,7 +642,6 @@
   }
 
   var deadline = new Date('September 29, 2018 10:30:00');
-  console.log(deadline);
   initializeClock('clockdiv', deadline);
 
   var btnMuteMusic = document.getElementById('btn-close-youtube');
